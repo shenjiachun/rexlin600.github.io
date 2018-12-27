@@ -6,8 +6,12 @@ icon: heart
 type: page
 ---
 
-* content
-{:toc}
+- content
+  {:toc}
+
+## SC 技术选项
+
+![ms-sc](/images/ms/ms-00.png)
 
 ## 关于我
 
@@ -17,13 +21,12 @@ type: page
 
 ## 联系我
 
-* GitHub：[rexlin600](https://github.com/rexlin600)
-* email：3072054267@qq.com
+- GitHub：[rexlin600](https://github.com/rexlin600)
+- email：3072054267@qq.com
 
 ## 致谢
 
-感谢 [Gaohaoyang](https://github.com/Gaohaoyang) 提供的博客模板 
-
+感谢 [Gaohaoyang](https://github.com/Gaohaoyang) 提供的博客模板
 
 ## Comments
 
