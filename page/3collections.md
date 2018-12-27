@@ -48,7 +48,7 @@ type: page
 
 - [Java 编程思想](http://blog.didispace.com/books/think-in-java/)
 
-- [Java 8 简明教程](http://blog.didispace.com/books/java8-tutorial/s)
+- [Java 8 简明教程](http://blog.didispace.com/books/java8-tutorial/)
 
 - [Spring 4.x 参考文档](http://blog.didispace.com/books/spring-framework-4-reference/)
 
