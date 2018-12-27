@@ -9,7 +9,7 @@ type: page
 - content
   {:toc}
 
-## SC 技术选项
+## SC 技术选项参考
 
 ![ms-sc](/images/ms/ms-00.png)
 
@@ -21,8 +21,11 @@ type: page
 
 ## 联系我
 
-- GitHub：[rexlin600](https://github.com/rexlin600)
+- github：[rexlin600](https://github.com/rexlin600)
 - email：3072054267@qq.com
+- qq：3072054267
+- weixin：rexlin600
+- weibo：人字旁那个何
 
 ## 致谢
 
