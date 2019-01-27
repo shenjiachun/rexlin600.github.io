@@ -1,0 +1,269 @@
+version: "2"
+services:
+  mongo:
+    scale: 1
+    start_on_create: true
+  money-task:
+    scale: 1
+    start_on_create: true
+  labor-matrix-service-parent:
+    scale: 1
+    start_on_create: true
+  base-service:
+    scale: 1
+    start_on_create: true
+  labor-matrix-web-frontend:
+    scale: 1
+    start_on_create: true
+  web-test:
+    scale: 1
+    start_on_create: true
+  app-http-api:
+    scale: 1
+    start_on_create: true
+  admin-skills:
+    scale: 1
+    start_on_create: true
+  snowflake-parent:
+    scale: 1
+    start_on_create: true
+  admin-medical:
+    scale: 1
+    start_on_create: true
+  user-mobile-medical:
+    scale: 1
+    start_on_create: true
+  money-web:
+    scale: 1
+    start_on_create: true
+  enjoy-fitness-service:
+    scale: 1
+    start_on_create: true
+  h5:
+    scale: 1
+    start_on_create: true
+  shop-pay-service:
+    scale: 1
+    start_on_create: true
+  merchant-http-api:
+    scale: 1
+    start_on_create: true
+  admin-task1:
+    scale: 1
+    start_on_create: true
+  web-front:
+    scale: 1
+    start_on_create: true
+  log-service:
+    scale: 1
+    start_on_create: true
+  activity-service-parent1:
+    scale: 1
+    start_on_create: true
+  taopiaopiao:
+    scale: 1
+    start_on_create: true
+  shop-search-service:
+    scale: 1
+    start_on_create: true
+  money-client-webstore:
+    scale: 1
+    start_on_create: true
+  verification:
+    scale: 1
+    start_on_create: true
+  cooperation-service:
+    scale: 1
+    start_on_create: true
+  farmCloud:
+    scale: 1
+    start_on_create: true
+  im:
+    scale: 1
+    start_on_create: true
+  customer-service:
+    scale: 1
+    start_on_create: true
+  money-service:
+    scale: 1
+    start_on_create: true
+  cooperation-http-api:
+    scale: 1
+    start_on_create: true
+  merchant-web-frontend:
+    scale: 1
+    start_on_create: true
+  common-h5-1:
+    scale: 1
+    start_on_create: true
+  admin-http-api:
+    scale: 1
+    start_on_create: true
+  cms-service1:
+    scale: 1
+    start_on_create: true
+  employee-service:
+    scale: 1
+    start_on_create: true
+  admin-web-front:
+    scale: 1
+    start_on_create: true
+  evaluation-service:
+    scale: 1
+    start_on_create: true
+  shop-activity-parent:
+    scale: 1
+    start_on_create: true
+  lb:
+    scale: 1
+    start_on_create: true
+    lb_config:
+      certs: []
+      default_cert: "*.cdzghome.com"
+      port_rules:
+        - priority: 3
+          protocol: https
+          service: money-client-webstore
+          source_port: 8410
+          target_port: 7777
+        - priority: 4
+          protocol: https
+          service: user-mobile-skills
+          source_port: 8394
+          target_port: 8394
+        - priority: 7
+          protocol: https
+          service: money-pub
+          source_port: 8402
+          target_port: 9999
+        - hostname: ""
+          path: ""
+          priority: 8
+          protocol: https
+          service: admin-http-api
+          source_port: 8101
+          target_port: 8101
+        - path: ""
+          priority: 9
+          protocol: https
+          service: admin-medical
+          source_port: 3111
+          target_port: 8392
+        - priority: 10
+          protocol: https
+          service: admin-skills
+          source_port: 3110
+          target_port: 8393
+        - priority: 13
+          protocol: https
+          service: h5
+          source_port: 3103
+          target_port: 8080
+        - priority: 15
+          protocol: https
+          service: verification
+          source_port: 8391
+          target_port: 8391
+        - priority: 16
+          protocol: https
+          service: user-mobile-medical
+          source_port: 8395
+          target_port: 8395
+        - priority: 17
+          protocol: https
+          service: employee-service
+          source_port: 8302
+          target_port: 8302
+        - priority: 19
+          protocol: https
+          service: money-client-app1
+          source_port: 8400
+          target_port: 8088
+        - priority: 21
+          protocol: http
+          service: money-task
+          source_port: 3138
+          target_port: 8889
+        - priority: 23
+          protocol: http
+          service: enjoy-fitness-service
+          source_port: 3139
+          target_port: 8306
+        - priority: 24
+          protocol: https
+          service: money-service
+          source_port: 8401
+          target_port: 8888
+        - priority: 25
+          protocol: https
+          service: cooperation-http-api
+          source_port: 3146
+          target_port: 8600
+        - priority: 26
+          protocol: https
+          service: cooperation-service
+          source_port: 3147
+          target_port: 8605
+        - priority: 27
+          protocol: http
+          service: merchant-http-api
+          source_port: 3131
+          target_port: 8500
+        - priority: 28
+          protocol: http
+          service: vote/vote1
+          source_port: 3163
+          target_port: 80
+        - priority: 29
+          protocol: https
+          service: app-http-api
+          source_port: 8100
+          target_port: 8100
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 42
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: recreate
+      reinitializing_timeout: 60000
+  shop-merchant-parent1:
+    scale: 1
+    start_on_create: true
+  money-client-app1:
+    scale: 1
+    start_on_create: true
+  lb1:
+    scale: 1
+    start_on_create: true
+    lb_config:
+      certs: []
+      port_rules:
+        - priority: 2
+          protocol: http
+          service: labor-matrix-web-frontend
+          source_port: 80
+          target_port: 8080
+        - priority: 3
+          protocol: http
+          service: app-http-api
+          source_port: 3160
+          target_port: 8100
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 42
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      reinitializing_timeout: 60000
+  money-pub:
+    scale: 1
+    start_on_create: true
+  user-mobile-skills:
+    scale: 1
+    start_on_create: true
+  shop-goods-parent:
+    scale: 1
+    start_on_create: true

@@ -1,0 +1,410 @@
+version: "2"
+services:
+  mongo:
+    image: mongo
+    stdin_open: true
+    tty: true
+    ports:
+      - 3124:27017/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  money-task:
+    image: registry.cn-qingdao.aliyuncs.com/labor/money-task-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  labor-matrix-service-parent:
+    image: registry.cn-qingdao.aliyuncs.com/labor/labor-matrix-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3159:8608/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  base-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/base-service-1.0.0-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /public:/opt
+    tty: true
+    links:
+      - admin-http-api:admin-http-api
+      - customer-service:customer-service
+    ports:
+      - 8304:8304/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  labor-matrix-web-frontend:
+    image: registry.cn-qingdao.aliyuncs.com/labor/labor-matrix-web-frontend:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 3161:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  web-test:
+    image: registry.cn-qingdao.aliyuncs.com/labor/gh_web_web_new:1.0.0
+    stdin_open: true
+    tty: true
+    links:
+      - admin-http-api:admin-http-api
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  app-http-api:
+    image: registry.cn-qingdao.aliyuncs.com/labor/app-http-api-1.0.0-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /public:/opt
+    tty: true
+    links:
+      - employee-service:employee-service
+      - base-service:base-service
+      - activity-service-parent1:activity-service-parent1
+      - customer-service:customer-service
+      - evaluation-service:evaluation-service
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  admin-skills:
+    image: registry.cn-qingdao.aliyuncs.com/labor/admin-skills-1.0.0.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 8393:8393/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.start_once: "true"
+  snowflake-parent:
+    image: registry.cn-qingdao.aliyuncs.com/labor/snowflake-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3141:8530/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  admin-medical:
+    image: registry.cn-qingdao.aliyuncs.com/labor/admin-medical-1.0.0.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  user-mobile-medical:
+    image: registry.cn-qingdao.aliyuncs.com/labor/user-mobile-medical-1.0.0.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  money-web:
+    image: registry.cn-qingdao.aliyuncs.com/labor/money-web:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 3121:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  enjoy-fitness-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/enjoy-fitness-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3127:8306/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  h5:
+    image: registry.cn-qingdao.aliyuncs.com/labor/h5
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  shop-pay-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/pay-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3118:8520/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  merchant-http-api:
+    image: registry.cn-qingdao.aliyuncs.com/labor/merchant-http-api-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  admin-task1:
+    image: registry.cn-qingdao.aliyuncs.com/labor/admin-task-1.0.0.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3144:8396/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  web-front:
+    image: registry.cn-qingdao.aliyuncs.com/labor/web_front:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 3126:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  log-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/log-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3106:8606/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  activity-service-parent1:
+    image: registry.cn-qingdao.aliyuncs.com/labor/activity-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3149:8308/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  taopiaopiao:
+    image: registry.cn-qingdao.aliyuncs.com/labor/taopiaopiao-service-1.0.0-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /data/log/taopiaopiao:/tmp/LOG_PATH_IS_UNDEFINED/logs
+    tty: true
+    ports:
+      - 3107:8602/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  shop-search-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/search-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3140:8525/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  money-client-webstore:
+    image: registry.cn-qingdao.aliyuncs.com/labor/money-client-webstore-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  verification:
+    image: registry.cn-qingdao.aliyuncs.com/labor/verification-1.0.0.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3125:8391/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  cooperation-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/cooperation-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  farmCloud:
+    image: registry.cn-qingdao.aliyuncs.com/labor/farmcloud:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 3151:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  im:
+    image: registry.cn-qingdao.aliyuncs.com/labor/im:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 3164:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  customer-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/customer-service-1.0.0-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /public:/opt
+      - /data/log/:/tmp/LOG_PATH_IS_UNDEFINED
+    tty: true
+    links:
+      - base-service:base-service
+    ports:
+      - 8300:8300/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  money-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/money-service-0.0.1-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  cooperation-http-api:
+    image: registry.cn-qingdao.aliyuncs.com/labor/cooperation-http-api-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  merchant-web-frontend:
+    image: registry.cn-qingdao.aliyuncs.com/labor/merchant-web-frontend:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 8081:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  common-h5-1:
+    image: registry.cn-qingdao.aliyuncs.com/labor/common-h5:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 3150:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  admin-http-api:
+    image: registry.cn-qingdao.aliyuncs.com/labor/admin-http-api-1.0.0-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /data:/data
+    tty: true
+    links:
+      - employee-service:employee-service
+      - base-service:base-service
+      - customer-service:customer-service
+    ports:
+      - 3115:8101/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  cms-service1:
+    image: registry.cn-qingdao.aliyuncs.com/labor/cms-service-1.0.0-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /public:/opt
+      - /data/log/cms:/tmp/LOG_PATH_IS_UNDEFINED/logs/
+    tty: true
+    links:
+      - base-service:base-service
+    ports:
+      - 8600:8600/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  employee-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/employee-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  admin-web-front:
+    image: registry.cn-qingdao.aliyuncs.com/labor/admin-web-frontend:1.0.0
+    stdin_open: true
+    tty: true
+    ports:
+      - 3143:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  evaluation-service:
+    image: registry.cn-qingdao.aliyuncs.com/labor/evaluation-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3102:8604/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  shop-activity-parent:
+    image: registry.cn-qingdao.aliyuncs.com/labor/shop-activity-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 8505:8505/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  lb:
+    image: rancher/lb-service-haproxy:v0.9.6
+    ports:
+      - 8410:8410/tcp
+      - 8394:8394/tcp
+      - 8402:8402/tcp
+      - 8101:8101/tcp
+      - 3111:3111/tcp
+      - 3110:3110/tcp
+      - 3103:3103/tcp
+      - 8391:8391/tcp
+      - 8395:8395/tcp
+      - 8302:8302/tcp
+      - 8400:8400/tcp
+      - 3138:3138/tcp
+      - 3139:3139/tcp
+      - 8401:8401/tcp
+      - 3146:3146/tcp
+      - 3147:3147/tcp
+      - 3131:3131/tcp
+      - 3163:3163/tcp
+      - 8100:8100/tcp
+    labels:
+      io.rancher.scheduler.affinity:host_label: lb=true
+      io.rancher.container.agent.role: environmentAdmin,agent
+      io.rancher.container.agent_service.drain_provider: "true"
+      io.rancher.container.create_agent: "true"
+  shop-merchant-parent1:
+    image: registry.cn-qingdao.aliyuncs.com/labor/merchant-service-1.0.0-snapshot.jar
+    stdin_open: true
+    tty: true
+    ports:
+      - 3120:8515/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  money-client-app1:
+    image: registry.cn-qingdao.aliyuncs.com/labor/money-client-app-0.0.1-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /data:/data
+    tty: true
+    links:
+      - money-service:money-service
+    labels:
+      io.rancher.scheduler.affinity:host_label: lb=true
+      io.rancher.container.pull_image: always
+      money-client-app: "true"
+  lb1:
+    image: rancher/lb-service-haproxy:v0.9.6
+    ports:
+      - 80:80/tcp
+      - 3160:3160/tcp
+    labels:
+      io.rancher.container.agent.role: environmentAdmin,agent
+      io.rancher.container.agent_service.drain_provider: "true"
+      io.rancher.container.create_agent: "true"
+  money-pub:
+    image: registry.cn-qingdao.aliyuncs.com/labor/money-pub-0.0.1-snapshot.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: lb=true
+  user-mobile-skills:
+    image: registry.cn-qingdao.aliyuncs.com/labor/user-mobile-skills-1.0.0.jar
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  shop-goods-parent:
+    image: registry.cn-qingdao.aliyuncs.com/labor/goods-service-1.0.0-snapshot.jar
+    stdin_open: true
+    volumes:
+      - /data/log/goods-service/:/tmp/goods-service-1.0.0-SNAPSHOT.jar.log
+    tty: true
+    ports:
+      - 3116:8510/tcp
+    labels:
+      io.rancher.container.pull_image: always
