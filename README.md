@@ -28,6 +28,7 @@
 | 1    | AMQP                        | 高级消息队列       | ☆☆☆  |
 | 1    | API Gateway                 | 网关               | ☆☆☆  |
 | 1    | APM                         | 链路追踪           | ☆☆   |
+| 1    | Concurrent                  | 并发系列           | ☆☆☆☆ |
 | 1    | Container Series            | 容器系列           | ☆☆☆☆ |
 | 1    | Data Structure & Algorithms | 数据结构与算法     | ☆☆☆  |
 | 1    | Database Middleware         | 数据库中间件       | ☆☆☆  |
@@ -38,6 +39,7 @@
 | 1    | Installation Tutorial       | 安装教程           | ☆    |
 | 1    | Interview Questions         | 面试题             | ☆☆☆☆ |
 | 1    | JDK & JVM                   | JDK&JVM            | ☆☆☆  |
+| 1    | Language                    | 语言类             | ☆☆   |
 | 1    | Microservice Theory         | 微服务理论         | ☆☆   |
 | 1    | Netty & Web Server          | Netty & Web Server | ☆☆☆  |
 | 1    | Permission Series           | 权限系列           | ☆☆☆  |
