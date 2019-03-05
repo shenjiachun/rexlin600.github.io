@@ -1,3 +1,16 @@
+<div align="center">    
+ <img src="logo.png" width = "150" height = "150" alt="rexlin600" align=left />
+ <img src="https://travis-ci.org/rexlin600/rexlin600.github.io.svg?branch=master" align=left />
+ <img src="https://img.shields.io/github/repo-size/rexlin600/rexlin600.github.io.svg" align=left />
+ <img src="https://img.shields.io/github/license/rexlin600/rexlin600.github.io.svg" align=left />
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## 写在前面
 
