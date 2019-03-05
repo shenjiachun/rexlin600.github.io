@@ -2,11 +2,11 @@
 <br/>
 
 <div align="center">    
- <img src="logo.png" width = "100" height = "100" alt="DoraemonKit" align=left />
- <img src="https://img.shields.io/github/license/didi/DoraemonKit.svg" align=left />
+ <img src="logo.png" width = "100" height = "100" alt="rexlin600" align=left />
  <img src="https://travis-ci.org/rexlin600/rexlin600.github.io.svg?branch=master" align=left />
- <img src="https://img.shields.io/badge/iOS-1.1.6-yellow.svg" align=left />
- <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" align=left />
+ <img src="https://img.shields.io/github/repo-size/rexlin600/rexlin600.github.io.svg" align=left />
+ <img src="https://img.shields.io/apm/l/rexlin600.github.io.svg" align=left />
+ 
 </div>
 
 <br/>
