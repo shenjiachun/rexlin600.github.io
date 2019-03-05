@@ -2,13 +2,15 @@
 <br/>
 
 <div align="center">    
- <img src="logo.png" width = "100" height = "100" alt="rexlin600" align=left />
+ <img src="logo.png" width = "130" height = "130" alt="rexlin600" align=left />
  <img src="https://travis-ci.org/rexlin600/rexlin600.github.io.svg?branch=master" align=left />
  <img src="https://img.shields.io/github/repo-size/rexlin600/rexlin600.github.io.svg" align=left />
- <img src="https://img.shields.io/apm/l/rexlin600.github.io.svg" align=left />
+ <img src="https://img.shields.io/github/license/rexlin600/rexlin600.github.io.svg" align=left />
  
 </div>
 
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
