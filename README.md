@@ -11,6 +11,7 @@
 <br/>
 <br/>
 <br/>
+<br/>
 
 ## 写在前面
 
@@ -26,9 +27,6 @@
 目前计划是在`2020`年完成基本技术博客的更新内容，如果有机会，后期也希望能够有更多的朋友加入我。
 
 ## 目录
-
-**特别说明：** 文章在 `rexlin600.github.io/_post` 目录下，博客模板请参考 [HyG](https://github.com/gaohaoyang)，转载请说明出处，谢谢。
-
 
 就模块划分而言，目前主要有以下模块，`后续会持续更新内容`（工作关系，没那么多时间总结，部分内容来自互联网）
 
@@ -67,6 +65,10 @@
 | 1    | Source Series               | 源码系列           | ☆☆☆  |
 | 1    | Spring Series               | Spring全家桶系列   | ☆☆☆☆ |
 
+**特别说明：** 
+
+文章在 `rexlin600.github.io/_post` 目录下，博客模板请参考 [HyG](https://github.com/gaohaoyang)，转载请说明出处，谢谢。
+
 ## Thanks
 
 本系列文章部分内容来自互联网（排名部分先后）,特此感谢：
@@ -76,5 +78,3 @@
 - [并发编程网](http://ifeve.com/)
 - [Java技术驿站](http://cmsblogs.com/)
 - [...](https://github.com/rexlin600/rexlin600.github.io)
-
-
