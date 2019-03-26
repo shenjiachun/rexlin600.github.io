@@ -38,12 +38,12 @@
 
 **以下部分是不定时更新的项目：**
 
-| 项目名称        | 模块                        |
-| --------------- | --------------------------- |
-| 微服务理论         | Microservice Theory         |
-| 面试专题           | Interview Questions         |
-| 数据结构与算法     | Data Structure & Algorithms |
-| vim                | Development                 |
+| 项目名称       | 模块                        |
+| -------------- | --------------------------- |
+| 微服务理论     | Microservice Theory         |
+| 面试专题       | Interview Questions         |
+| 数据结构与算法 | Data Structure & Algorithms |
+| vim            | Development                 |
 
 **以下是已完结的项目：**
 
@@ -79,7 +79,7 @@
 | 1    | Distributed Transaction     | 分布式事务         | ☆☆☆☆ |
 | 1    | Installation Tutorial       | 安装教程           | ☆    |
 | 1    | Interview Questions         | 面试题             | ☆☆☆☆ |
-| 1    | JDK & JVM                   | JDK&JVM            | ☆☆☆  |
+| 1    | JAVA & JVM                  | JAVA & JVM         | ☆☆☆  |
 | 1    | Language                    | 语言类             | ☆☆   |
 | 1    | Microservice Theory         | 微服务理论         | ☆☆   |
 | 1    | Netty & Web Server          | Netty & Web Server | ☆☆☆  |
