@@ -11,8 +11,7 @@ type: page
 
 ### 架构/管理
 
-- [API契约中心](https://www.apibuilder.io/)
-- [API契约中心](https://www.apibuilder.io/)
+- [API 契约中心](https://www.apibuilder.io/)
 
 ### 工具
 
@@ -62,7 +61,7 @@ type: page
 - [VSCode 安装 Go 插件问题](https://blog.csdn.net/aspace123/article/details/81270556)
 - [微服务 4 个设计原则 19 个 解决方案](http://server.51cto.com/Micro-551054.htm)
 - [支付宝 微信 支付](http://blog.leanote.com/post/programhacker/Java-%E6%94%AF%E4%BB%98%E5%AE%9D-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98)
-- [浅梦*码库](https://gitee.ltd/)
+- [浅梦\*码库](https://gitee.ltd/)
 
 ### Comments
 
